@@ -1,0 +1,102 @@
+/**,
+*::before,
+*::after {
+    box-sizing: border-box;
+   }*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.4;
+}
+body {
+    background-color: black;
+    
+}
+.card_container {
+    perspective: 1000px;
+    height: 350px;
+    width: 350px;
+    margin: 100px auto;
+}
+.card_container:hover .card {
+       transform: rotateY(180deg);
+    animation: flow-border 3s linear infinite;
+    }
+
+    .card{
+    height:350px;
+    width: 350px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    
+    }
+    .frontcard,
+    .backcard {
+        height: 100%;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius:20px;
+        overflow: hidden;
+        position:absolute;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .frontcard{
+        background-color:white;
+        padding:20px;
+       
+}
+    .frontcard img{
+        width: 300px;
+        height: 200px;
+        margin: 65px auto;
+        display: block;
+        
+        
+    }
+    .backcard{
+        
+        position:relative;
+        
+        padding:4px;
+        animation: none;
+        border-radius: 20px;
+        transform:rotateY(180deg);
+        background: linear-gradient(270deg, red, yellow, green, blue, red);
+        background-size: 300% 300%;
+        animation: flow-border 3s linear infinite;
+    }
+    .backcard_content{
+        background-color:black;
+        color: white;
+        padding:20px;
+        overflow-y: auto;
+        transform: translateY(180deg);
+        height:100%; /*for scrolling*/
+    }
+    .button{
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: white;
+       
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        border: 2px solid aqua;
+    }
+    .heading{
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        
+    }
+    @keyframes flow-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+        
